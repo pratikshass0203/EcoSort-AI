@@ -218,3 +218,49 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==============================================================================
+# EcoSort-AI Project Specific Ignores
+# ==============================================================================
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Model Checkpoints & Exported Edge Binaries
+*.pt
+*.pth
+*.pte
+*.bin
+*.onnx
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+models/exported/*
+!models/exported/.gitkeep
+
+# Datasets
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Streamlit Local Cache
+.streamlit/*
+!.streamlit/config.toml
+
+# IDE & OS Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+
+# Node dependencies
+node_modules/
+frontend/node_modules/
+dist/
+.vite/
+.env
+*.db
