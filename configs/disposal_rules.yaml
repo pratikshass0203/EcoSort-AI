@@ -1,0 +1,80 @@
+# ==============================================================================
+# EcoSort-AI Disposal Knowledge Base Rules
+# Bharat AI-SoC Challenge 2026-2027
+# ==============================================================================
+
+categories:
+  biodegradable:
+    display_name: "Biodegradable Waste"
+    bin_color: "Green"
+    description: "Organic waste that decomposes naturally through biological processes."
+    examples:
+      - "Food scraps and leftovers"
+      - "Fruit and vegetable peels"
+      - "Leaves, flowers, and garden waste"
+      - "Coffee grounds and tea leaves"
+      - "Eggshells"
+    handling_instructions:
+      - "Segregate from dry and non-biodegradable waste at source."
+      - "Do not mix with plastic wrappers, rubber bands, or foil."
+      - "Place in the green compostable bin or backyard composting unit."
+      - "Keep the bin covered to prevent odor and pests."
+    environmental_impact: "Composting organic waste diverts methane emissions from landfills and produces nutrient-rich organic soil conditioner."
+
+  recyclable:
+    display_name: "Dry Recyclable Waste"
+    bin_color: "Blue"
+    description: "Inorganic materials that can be reprocessed into new products."
+    examples:
+      - "Plastic bottles (PET/HDPE)"
+      - "Clean paper and cardboard boxes"
+      - "Aluminum and tin beverage/food cans"
+      - "Glass bottles and jars"
+      - "Clean tetra packs"
+    handling_instructions:
+      - "Rinse containers thoroughly to remove food and liquid residues."
+      - "Flatten cardboard boxes and crush plastic bottles to save bin space."
+      - "Ensure paper and cardboard are kept dry."
+      - "Deposit in the blue recycling bin or hand over to authorized recyclers."
+    environmental_impact: "Recycling reduces virgin material extraction, conserves energy, and minimizes plastic pollution in oceans and landfills."
+
+  electronic:
+    display_name: "Electronic Waste (E-Waste)"
+    bin_color: "Yellow / Designated E-Waste Bin"
+    description: "Discarded electrical or electronic devices and components."
+    examples:
+      - "Old smartphones and tablets"
+      - "Circuit boards and computer components"
+      - "Charging cables, adapters, and power cords"
+      - "Batteries (lithium-ion, alkaline, lead-acid)"
+      - "Headphones and electronic peripherals"
+    handling_instructions:
+      - "Do not discard in regular municipal household waste bins."
+      - "Do not attempt to crush, puncture, or burn electronic components."
+      - "Tape over battery terminals before drop-off to prevent short circuits."
+      - "Hand over exclusively to government-authorized e-waste collection centers or certified recyclers."
+    environmental_impact: "Proper e-waste recycling enables recovery of precious metals (gold, copper, rare earths) and prevents toxic heavy metals from contaminating groundwater."
+
+  hazardous:
+    display_name: "Hazardous / Domestic Hazardous Waste"
+    bin_color: "Red / Black (Hazardous)"
+    description: "Substances that pose substantial or potential threats to public health or the environment."
+    examples:
+      - "Chemical, pesticide, and solvent containers"
+      - "Fluorescent tubes, CFL bulbs, and mercury thermometers"
+      - "Expired pharmaceuticals and medical waste"
+      - "Paint cans, varnishes, and thinners"
+      - "Motor oil and industrial lubricant containers"
+    handling_instructions:
+      - "CRITICAL: Do NOT mix with general household, wet, or recyclable waste."
+      - "Store in a secure, leak-proof container out of reach of children and pets."
+      - "Do not wash chemical residues into household drains or sewage systems."
+      - "Wear protective gloves if handling leaking containers."
+      - "Dispose strictly through specialized municipal hazardous waste collection drives or designated hazardous drop-off depots."
+    safety_alert: "MANDATORY SAFETY WARNING: Hazardous waste contains corrosive, flammable, or toxic chemicals. Do not touch bare chemical residues or inhale vapors."
+    environmental_impact: "Improper disposal leads to groundwater poisoning, soil toxicity, and severe health hazards for waste handlers."
+
+uncertainty_handling:
+  action: "Flag for visual re-capture or manual segregation"
+  message: "Prediction confidence is below safety threshold (70%). Please capture an image with clearer lighting and a single foreground object, or consult local municipal waste guidelines."
+

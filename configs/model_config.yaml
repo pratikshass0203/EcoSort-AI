@@ -1,0 +1,42 @@
+# ==============================================================================
+# EcoSort-AI Vision Model Configuration
+# Bharat AI-SoC Challenge 2026-2027
+# ==============================================================================
+
+model:
+  name: "mobilenet_v2"
+  num_classes: 4
+  pretrained: false
+  dropout_rate: 0.2
+  input_resolution: [224, 224]
+  input_channels: 3
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+
+classes:
+  0: "biodegradable"
+  1: "recyclable"
+  2: "electronic"
+  3: "hazardous"
+
+decision_gate:
+  # Softmax probability threshold below which a prediction is considered uncertain
+  confidence_threshold_tau: 0.70
+  # Minimum margin between top-1 and top-2 class probabilities to avoid ambiguity
+  ambiguity_margin: 0.15
+  uncertain_label: "Uncertain - Manual Inspection Required"
+
+training:
+  batch_size: 32
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  epochs: 15
+  early_stopping_patience: 3
+  seed: 42
+  device: "cpu"
+
+export:
+  target_format: "executorch"
+  backend: "xnnpack"
+  quantization: "int8"
+
